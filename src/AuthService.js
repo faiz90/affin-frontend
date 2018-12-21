@@ -25,8 +25,7 @@ export default class AuthService {
     loggedIn() {
         // Checks if there is a saved token and it's still valid
         const token = this.getToken();
-
-        return !!token && !this.isTokenExpired(token) // handwaiving here
+        return !!token && !this.isTokenExpired(token)
     }
 
     isTokenExpired(token) {
@@ -44,7 +43,7 @@ export default class AuthService {
     }
 
     setToken(idToken) {
-        // Saves user token to localStorage
+        // Saves token to localStorage
         localStorage.setItem('id_token', idToken)
     }
 
@@ -53,7 +52,7 @@ export default class AuthService {
     }
 
     getToken() {
-        // Retrieves the user token from localStorage
+        // Retrieves token from localStorage
         return localStorage.getItem('id_token')
     }
 
@@ -62,7 +61,7 @@ export default class AuthService {
     }
 
     logout() {
-        // Clear user token and profile data from localStorage
+        // Clear token from localStorage
         localStorage.removeItem('id_token');
     }
 
